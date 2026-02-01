@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sikandra</title>
+<style>
+/* Body */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: rgb(244, 232, 227);
+  color: #222;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  margin-top: -15px;
+  color: #0c0114;
+  margin-bottom: 30px;
+  opacity: 0;
+  font-size: 50px;
+  font-weight: 800;
+  transform: translateY(-30px);
+  animation: fadeSlideIn 1s forwards;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+.gallery img {
+  width: 350px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  animation: simpleFadeIn 1s forwards;
+  position: relative;
+}
+/* Stagger fade-in for each image */
+.gallery img:nth-child(1) { animation-delay: 0.2s; }
+.gallery img:nth-child(2) { animation-delay: 0.5s; }
+.gallery img:nth-child(3) { animation-delay: 0.8s; }
+/* Hover effect */
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  filter: brightness(1.05);
+  cursor: pointer;
+}
+
+/* Details Box */
+.details {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  padding: 25px;
+  border-left: 6px solid #4b0082;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideIn 1s forwards;
+  animation-delay: 1s;
+}
+
+/* Headings inside details */
+.details h2 {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideIn 0.8s forwards;
+  margin-top: 20px;
+}
+
+/* List items */
+.details ul li, .details ol li {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideIn 0.6s forwards;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+/* Stagger for lists */
+.details ul li:nth-child(1),
+.details ol li:nth-child(1) { animation-delay: 1.4s; }
+.details ul li:nth-child(2),
+.details ol li:nth-child(2) { animation-delay: 1.6s; }
+.details ul li:nth-child(3),
+.details ol li:nth-child(3) { animation-delay: 1.8s; }
+.details ul li:nth-child(4),
+.details ol li:nth-child(4) { animation-delay: 2s; }
+.details ul li:nth-child(5),
+.details ol li:nth-child(5) { animation-delay: 2.2s; }
+.details ul li:nth-child(6),
+.details ol li:nth-child(6) { animation-delay: 2.4s; }
+
+/* Location link */
+.location-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #82002e;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideIn 0.8s forwards;
+  animation-delay: 2.8s;
+}
+.location-link:hover {
+  text-decoration: underline;
+}
+
+/* Back link */
+.back {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  color: #4b0082;
+  text-decoration: none;
+  font-weight: bold;
+  opacity: 0;
+  font-size: 30px;
+  transform: translateY(20px);
+  animation: fadeSlideIn 0.8s forwards;
+  animation-delay: 3s;
+}
+.back:hover { text-decoration: underline; }
+
+/* Animations */
+@keyframes fadeSlideIn { to { opacity: 1; transform: translateY(0); } }
+@keyframes slideIn { to { opacity: 1; transform: translateX(0); } }
+@keyframes simpleFadeIn { to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body>
+
+<h1>Sikandra</h1>
+
+<!-- Gallery -->
+<div class="gallery">
+  <img src="sikandra1.jpeg" alt="Sikandra 1">
+  <img src="sikandra2.jpeg" alt="Sikandra 2">
+  <img src="sikandra3.jpeg" alt="Sikandra 3">
+</div>
+
+<!-- Details -->
+<div class="details">
+  <h2>History</h2>
+  <p>Sikandra is the location of the tomb of Akbar the Great, built between 1605–1613 by his son Jahangir. This monumental mausoleum combines Islamic, Hindu, Christian, and Persian architectural styles, representing the Mughal love for eclectic design and grandeur.</p>
+  <ul>
+    <li><strong>Purpose:</strong> Tomb of Emperor Akbar the Great.</li>
+    <li><strong>Construction:</strong> Completed in 1613 by Emperor Jahangir.</li>
+    <li><strong>Architects & Cost:</strong> Designed under Mughal supervision; exact cost unknown.</li>
+    <li><strong>Materials:</strong> Red sandstone, white marble inlays, decorative motifs.</li>
+    <li><strong>Legacy:</strong> Shows a blend of multiple architectural influences and is part of Agra’s historical heritage.</li>
+  </ul>
+
+  <h2>What to Explore?</h2>
+  <ol>
+    <li><strong>Main Tomb:</strong> Central red sandstone mausoleum with white marble inlay.</li>
+    <li><strong>Arched Gateways:</strong> Grand entrances decorated with inscriptions and carvings.</li>
+    <li><strong>Gardens:</strong> Mughal-style charbagh garden with water channels and pathways.</li>
+    <li><strong>Architectural Details:</strong> Combination of Hindu, Islamic, and Persian motifs.</li>
+    <li><strong>Decorative Stonework:</strong> Floral and geometric patterns in marble and sandstone.</li>
+    <li><strong>Fortification Walls:</strong> Protective walls surrounding the complex.</li>
+  </ol>
+
+  <h2>Tips for Exploration</h2>
+  <ul>
+    <li>Open daily from sunrise to sunset.</li>
+    <li>Photography allowed; respect preservation rules.</li>
+    <li>Wear comfortable shoes; the complex is spacious with gardens.</li>
+  </ul>
+</div>
+
+<!-- Location Link -->
+<a href="https://maps.app.goo.gl/rJWVTWUyVJwR3EQv7" class="location-link" target="_blank">📍 Location: Click Here</a>
+
+<!-- Back Link -->
+<a href="index.html" class="back">← Back to Explore Agra</a>
+
+</body>
+</html>

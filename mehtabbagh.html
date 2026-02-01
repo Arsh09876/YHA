@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mehtab Bagh</title>
+
+<style>
+body{
+  font-family:"Segoe UI",sans-serif;
+  background: rgb(218, 239, 218);
+  color:#222;
+  padding:20px;
+  overflow-x:hidden;
+}
+
+/* Heading */
+h1{
+  text-align:center;
+  margin-top:-15px;
+  color:#0c0114;
+  margin-bottom:30px;
+  opacity:0;
+  font-size:50px;
+  font-weight:800;
+  transform:translateY(-30px);
+  animation:fadeSlideIn 1s forwards;
+  font-family:Georgia,'Times New Roman',Times,serif;
+}
+
+/* Gallery */
+.gallery{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:15px;
+  margin-bottom:25px;
+}
+.gallery img{
+  width:350px;
+  height:380px;
+  object-fit:cover;
+  border-radius:8px;
+  opacity:0;
+  transform:translateY(20px);
+  transition:transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  animation:simpleFadeIn 1s forwards;
+}
+.gallery img:nth-child(1){animation-delay:0.2s;}
+.gallery img:nth-child(2){animation-delay:0.5s;}
+.gallery img:nth-child(3){animation-delay:0.8s;}
+
+.gallery img:hover{
+  transform:scale(1.05);
+  box-shadow:0 10px 20px rgba(0,0,0,0.3);
+  filter:brightness(1.05);
+}
+
+/* Details */
+.details{
+  max-width:800px;
+  margin:auto;
+  background:#fff;
+  padding:25px;
+  border-left:6px solid #2e3c8b;
+  border-radius:8px;
+  opacity:0;
+  transform:translateX(-50px);
+  animation:slideIn 1s forwards;
+  animation-delay:1s;
+}
+
+.details h2{
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeSlideIn 0.8s forwards;
+  margin-top:20px;
+}
+
+.details ul li,
+.details ol li{
+  opacity:0;
+  transform:translateX(-20px);
+  animation:slideIn 0.6s forwards;
+  margin-bottom:8px;
+  line-height:1.6;
+}
+
+.details ul li:nth-child(1),
+.details ol li:nth-child(1){animation-delay:1.4s;}
+.details ul li:nth-child(2),
+.details ol li:nth-child(2){animation-delay:1.6s;}
+.details ul li:nth-child(3),
+.details ol li:nth-child(3){animation-delay:1.8s;}
+.details ul li:nth-child(4),
+.details ol li:nth-child(4){animation-delay:2s;}
+.details ul li:nth-child(5),
+.details ol li:nth-child(5){animation-delay:2.2s;}
+
+/* Location */
+.location-link{
+  display:block;
+  text-align:center;
+  margin-top:20px;
+  font-size:18px;
+  font-weight:bold;
+  color:#2e8b57;
+  text-decoration:none;
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeSlideIn 0.8s forwards;
+  animation-delay:2.6s;
+}
+.location-link:hover{text-decoration:underline;}
+
+/* Back */
+.back{
+  display:block;
+  text-align:center;
+  margin-top:15px;
+  color:#4b0082;
+  text-decoration:none;
+  font-weight:bold;
+  opacity:0;
+  font-size:30px;
+  transform:translateY(20px);
+  animation:fadeSlideIn 0.8s forwards;
+  animation-delay:2.8s;
+}
+.back:hover{text-decoration:underline;}
+
+/* Animations */
+@keyframes fadeSlideIn{to{opacity:1;transform:translateY(0);}}
+@keyframes slideIn{to{opacity:1;transform:translateX(0);}}
+@keyframes simpleFadeIn{to{opacity:1;transform:translateY(0);}}
+</style>
+</head>
+
+<body>
+
+<h1>Mehtab Bagh</h1>
+
+<!-- Gallery -->
+<div class="gallery">
+  <img src="mehtab1.jpeg" alt="Mehtab Bagh View 1">
+  <img src="mehtab2.jpeg" alt="Mehtab Bagh View 2">
+  <img src="mehtab3.jpeg" alt="Mehtab Bagh View 3">
+</div>
+
+<!-- Details -->
+<div class="details">
+  <h2>History</h2>
+  <p>Mehtab Bagh is a charbagh-style Mughal garden located on the northern bank of the Yamuna River, directly opposite the Taj Mahal. It was built by Emperor Babur and later restored by the Archaeological Survey of India to provide a serene view of the Taj Mahal.</p>
+
+  <ul>
+    <li><strong>Founder:</strong> Emperor Babur</li>
+    <li><strong>Period:</strong> Early Mughal era</li>
+    <li><strong>Purpose:</strong> Moonlight garden and viewing point</li>
+    <li><strong>Location:</strong> Opposite Taj Mahal across Yamuna</li>
+  </ul>
+
+  <h2>What to Explore?</h2>
+  <ol>
+    <li><strong>Taj Mahal View:</strong> One of the best sunset views of the Taj.</li>
+    <li><strong>Charbagh Layout:</strong> Traditional Mughal four-part garden.</li>
+    <li><strong>Reflection Pools:</strong> Symmetry aligned with the Taj.</li>
+    <li><strong>Photography:</strong> Ideal spot for peaceful photos.</li>
+    <li><strong>Yamuna Riverfront:</strong> Calm riverside atmosphere.</li>
+  </ol>
+
+  <h2>Tips for Exploration</h2>
+  <ul>
+    <li>Visit during sunset for best views.</li>
+    <li>Carry a camera for photography.</li>
+    <li>Evening hours are cooler and pleasant.</li>
+  </ul>
+</div>
+
+<!-- Location -->
+<a href="https://maps.app.goo.gl/8WNh4ASj7wLGHZdo6"
+   class="location-link" target="_blank">
+📍 Location: Click Here
+</a>
+
+<!-- Back -->
+<a href="index.html" class="back">← Back to Explore Agra</a>
+
+</body>
+</html>

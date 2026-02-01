@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taj Mahal</title>
+<style>
+/* Body */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: rgb(215, 215, 236);
+  color: #222;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  margin-top: -15px;
+  color: #0c0114;
+  margin-bottom: 30px;
+  opacity: 0;
+  font-size: 50px;
+  font-weight: 800;
+  transform: translateY(-30px);
+  animation: fadeSlideIn 1s forwards;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+.gallery img {
+  width: 350px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  animation: simpleFadeIn 1s forwards;
+  position: relative;
+}
+/* Stagger fade-in for each image */
+.gallery img:nth-child(1) { animation-delay: 0.2s; }
+.gallery img:nth-child(2) { animation-delay: 0.5s; }
+.gallery img:nth-child(3) { animation-delay: 0.8s; }
+/* Hover effect */
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  filter: brightness(1.05);
+  cursor: pointer;
+}
+
+/* Details Box */
+.details {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  padding: 25px;
+  border-left: 6px solid #4b0082;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideIn 1s forwards;
+  animation-delay: 1s;
+}
+
+/* Headings inside details */
+.details h2 {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideIn 0.8s forwards;
+  margin-top: 20px;
+}
+
+/* List items */
+.details ul li, .details ol li {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideIn 0.6s forwards;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+/* Stagger for lists */
+.details ul li:nth-child(1),
+.details ol li:nth-child(1) { animation-delay: 1.4s; }
+.details ul li:nth-child(2),
+.details ol li:nth-child(2) { animation-delay: 1.6s; }
+.details ul li:nth-child(3),
+.details ol li:nth-child(3) { animation-delay: 1.8s; }
+.details ul li:nth-child(4),
+.details ol li:nth-child(4) { animation-delay: 2s; }
+.details ul li:nth-child(5),
+.details ol li:nth-child(5) { animation-delay: 2.2s; }
+.details ul li:nth-child(6),
+.details ol li:nth-child(6) { animation-delay: 2.4s; }
+.details ul li:nth-child(7),
+.details ol li:nth-child(7) { animation-delay: 2.6s; }
+
+/* Location link */
+.location-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #82002e;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideIn 0.8s forwards;
+  animation-delay: 2.8s;
+}
+.location-link:hover {
+  text-decoration: underline;
+}
+
+/* Back link */
+.back {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  color: #4b0082;
+  text-decoration: none;
+  font-weight: bold;
+  opacity: 0;
+  font-size: 30px;
+  transform: translateY(20px);
+  animation: fadeSlideIn 0.8s forwards;
+  animation-delay: 3s;
+}
+.back:hover { text-decoration: underline; }
+
+/* Animations */
+@keyframes fadeSlideIn { to { opacity: 1; transform: translateY(0); } }
+@keyframes slideIn { to { opacity: 1; transform: translateX(0); } }
+@keyframes simpleFadeIn { to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body>
+
+<h1>Taj Mahal</h1>
+
+<!-- Gallery -->
+<div class="gallery">
+  <img src="taj1.jpeg" alt="Taj Mahal 1">
+  <img src="taj2.jpeg" alt="Taj Mahal 2">
+  <img src="taj3.jpeg" alt="Taj Mahal 3">
+</div>
+
+<!-- Details -->
+<div class="details">
+  <h2>History</h2>
+  <p>The Taj Mahal is an ivory-white marble mausoleum in Agra, India, commissioned in 1632 by Mughal Emperor Shah Jahan to honor his favorite wife, Mumtaz Mahal, who died in 1631. Built over 22 years (completed c. 1653) by ~20,000 artisans, it represents the pinnacle of Mughal architecture, blending Persian, Islamic, and Indian styles.</p>
+  <ul>
+    <li><strong>Purpose:</strong> A tomb for Mumtaz Mahal, who died giving birth to their 14th child.</li>
+    <li><strong>Construction:</strong> Started in 1632, main mausoleum finished around 1648, gardens, mosque, and gateway completed by 1653.</li>
+    <li><strong>Architects & Cost:</strong> Designed by a committee headed by Ustad Ahmad Lahauri, costing roughly 32 million rupees.</li>
+    <li><strong>Materials:</strong> White marble from Makrana, Rajasthan, inlaid with semi-precious stones (pietra dura).</li>
+    <li><strong>Legacy:</strong> Shah Jahan was later imprisoned by his son Aurangzeb and buried beside Mumtaz Mahal, affecting the symmetry.</li>
+  </ul>
+
+  <h2>What to Explore?</h2>
+  <ol>
+    <li><strong>Main Mausoleum:</strong> Central white marble structure containing the cenotaphs of Shah Jahan and Mumtaz Mahal.</li>
+    <li><strong>Pietra Dura Inlay Work:</strong> Detailed floral designs with semi-precious stones and marble carvings.</li>
+    <li><strong>Charbagh Gardens:</strong> Persian-style four-quadrant gardens with reflecting pools.</li>
+    <li><strong>Great Gate (Darwaza-i-rauza):</strong> Impressive red sandstone entrance leading to the complex.</li>
+    <li><strong>Taj Museum:</strong> Original Mughal-era drawings, paintings, and artifacts.</li>
+    <li><strong>Mosque & Assembly Hall:</strong> Red sandstone structures flanking the main tomb.</li>
+    <li><strong>Yamuna River View:</strong> Rear terrace offers a panoramic view of the river and monument.</li>
+  </ol>
+
+  <h2>Tips for Exploration</h2>
+  <ul>
+    <li>Closed on Fridays.</li>
+    <li>Strict security; avoid large bags or food items.</li>
+    <li>Wear comfortable shoes for walking through the gardens and complex.</li>
+  </ul>
+</div>
+
+<!-- Location Link -->
+<a href="https://maps.app.goo.gl/dbrkyKDctjVfPzv37?g_st=ac" class="location-link" target="_blank">📍 Location: Click Here</a>
+
+<!-- Back Link -->
+<a href="index.html" class="back">← Back to Explore Agra</a>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shaheed Smarak Park, Agra</title>
+
+<style>
+body{
+  font-family:"Segoe UI",sans-serif;
+  background:rgb(214, 234, 209);
+  color:#222;
+  padding:20px;
+  overflow-x:hidden;
+}
+
+/* Heading */
+h1{
+  text-align:center;
+  margin-top:-15px;
+  color:#0c0114;
+  margin-bottom:30px;
+  opacity:0;
+  font-size:48px;
+  font-weight:800;
+  transform:translateY(-30px);
+  animation:fadeSlideIn 1s forwards;
+  font-family:Georgia,'Times New Roman',Times,serif;
+}
+
+/* Gallery */
+.gallery{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:15px;
+  margin-bottom:25px;
+}
+.gallery img{
+  width:350px;
+  height:380px;
+  object-fit:cover;
+  border-radius:8px;
+  opacity:0;
+  transform:translateY(20px);
+  transition:transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  animation:simpleFadeIn 1s forwards;
+}
+.gallery img:nth-child(1){animation-delay:0.2s;}
+.gallery img:nth-child(2){animation-delay:0.5s;}
+.gallery img:nth-child(3){animation-delay:0.8s;}
+
+.gallery img:hover{
+  transform:scale(1.05);
+  box-shadow:0 10px 20px rgba(0,0,0,0.3);
+  filter:brightness(1.05);
+}
+
+/* Details */
+.details{
+  max-width:800px;
+  margin:auto;
+  background:#fff;
+  padding:25px;
+  border-left:6px solid #b22222;
+  border-radius:8px;
+  opacity:0;
+  transform:translateX(-50px);
+  animation:slideIn 1s forwards;
+  animation-delay:1s;
+}
+
+.details h2{
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeSlideIn 0.8s forwards;
+  margin-top:20px;
+}
+
+.details ul li,
+.details ol li{
+  opacity:0;
+  transform:translateX(-20px);
+  animation:slideIn 0.6s forwards;
+  margin-bottom:8px;
+  line-height:1.6;
+}
+
+.details ul li:nth-child(1),
+.details ol li:nth-child(1){animation-delay:1.4s;}
+.details ul li:nth-child(2),
+.details ol li:nth-child(2){animation-delay:1.6s;}
+.details ul li:nth-child(3),
+.details ol li:nth-child(3){animation-delay:1.8s;}
+.details ul li:nth-child(4),
+.details ol li:nth-child(4){animation-delay:2s;}
+.details ul li:nth-child(5),
+.details ol li:nth-child(5){animation-delay:2.2s;}
+
+/* Location */
+.location-link{
+  display:block;
+  text-align:center;
+  margin-top:20px;
+  font-size:18px;
+  font-weight:bold;
+  color:#b22222;
+  text-decoration:none;
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeSlideIn 0.8s forwards;
+  animation-delay:2.6s;
+}
+.location-link:hover{text-decoration:underline;}
+
+/* Back */
+.back{
+  display:block;
+  text-align:center;
+  margin-top:15px;
+  color:#4b0082;
+  text-decoration:none;
+  font-weight:bold;
+  opacity:0;
+  font-size:28px;
+  transform:translateY(20px);
+  animation:fadeSlideIn 0.8s forwards;
+  animation-delay:2.8s;
+}
+.back:hover{text-decoration:underline;}
+
+/* Animations */
+@keyframes fadeSlideIn{to{opacity:1;transform:translateY(0);}}
+@keyframes slideIn{to{opacity:1;transform:translateX(0);}}
+@keyframes simpleFadeIn{to{opacity:1;transform:translateY(0);}}
+</style>
+</head>
+
+<body>
+
+<h1>Shaheed Smarak Park</h1>
+
+<!-- Gallery -->
+<div class="gallery">
+  <img src="park1.jpeg" alt="Shaheed Smarak Park Agra">
+  <img src="park2.jpeg" alt="Shaheed Smarak Memorial">
+  <img src="park3.jpeg" alt="Shaheed Smarak Green Area">
+</div>
+
+<!-- Details -->
+<div class="details">
+  <h2>History</h2>
+  <p>Shaheed Smarak Park in Agra is a memorial park dedicated to the martyrs who sacrificed their lives for India’s freedom. It serves as a place of remembrance, patriotism, and public gatherings, reflecting the nation’s respect for its freedom fighters.</p>
+
+  <ul>
+    <li><strong>Purpose:</strong> Tribute to Indian freedom fighters</li>
+    <li><strong>Significance:</strong> Symbol of sacrifice and patriotism</li>
+    <li><strong>Managed by:</strong> Local civic authorities</li>
+    <li><strong>Location:</strong> Heart of Agra city</li>
+  </ul>
+
+  <h2>What to Explore?</h2>
+  <ol>
+    <li><strong>Martyrs’ Memorial:</strong> Central structure honoring freedom fighters.</li>
+    <li><strong>Open Grounds:</strong> Used for national events and gatherings.</li>
+    <li><strong>Green Lawns:</strong> Peaceful walking and relaxation space.</li>
+    <li><strong>Patriotic Atmosphere:</strong> Ideal for educational visits.</li>
+    <li><strong>Public Events:</strong> National celebrations and ceremonies.</li>
+  </ol>
+
+  <h2>Tips for Visitors</h2>
+  <ul>
+    <li>Best visited in the morning or evening.</li>
+    <li>Maintain silence near the memorial.</li>
+    <li>Ideal for school and educational tours.</li>
+  </ul>
+</div>
+
+<!-- Location -->
+<a href="https://maps.app.goo.gl/MFVoqkft4UxkV8nt9"
+   class="location-link" target="_blank">
+📍 Location: Click Here
+</a>
+
+<!-- Back -->
+<a href="index.html" class="back">← Back to Explore Agra</a>
+
+</body>
+</html>
