@@ -437,3 +437,109 @@ h8 {
 @keyframes fadeSlideIn {
   to { opacity: 1; transform: translateY(0); }
 }
+/* ===== Online Booking Div Styling ===== */
+.online-booking{
+    max-width:500px;
+    margin:60px auto;
+    padding:40px 30px;
+    text-align:center;
+    background: linear-gradient(135deg,#1e3c72,#2a5298,#4facfe,#00f2fe);
+    border-radius: 15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    color:white;
+    position: relative;
+    overflow: hidden;
+    animation:fadeUp 1s ease;
+    margin-top: -10px;
+}
+
+.online-booking h2{
+    font-size:36px;
+    margin-bottom:15px;
+    text-shadow:2px 2px 3px rgba(0,0,0,0.4);
+}
+
+.online-booking p{
+    font-size:18px;
+    margin-bottom:30px;
+    opacity:0.9;
+}
+
+/* ===== Button ===== */
+.online-booking .booking-btn{
+    position:relative;
+    display:inline-block;
+    padding:18px 40px;
+    font-size:22px;
+    color:white;
+    text-decoration:none;
+    border-radius: 50px;
+    background:#25D366;
+    overflow:hidden;
+    box-shadow:0 0 20px rgba(37,211,102,0.6);
+    transition:transform 0.3s;
+    
+}
+
+.online-booking .booking-btn:hover{
+    transform:scale(1.1);
+}
+
+/* glowing border animation */
+.online-booking .booking-btn span{
+    position:absolute;
+    display:block;
+}
+
+.online-booking .booking-btn span:nth-child(1){
+    top:0; left:-100%;
+    width:100%; height:3px;
+    background:linear-gradient(90deg,transparent,white);
+    animation:move1 2s linear infinite;
+}
+@keyframes move1{
+    0%{left:-100%;}
+    50%,100%{left:100%;}
+}
+
+.online-booking .booking-btn span:nth-child(2){
+    right:0; top:-100%;
+    width:3px; height:100%;
+    background:linear-gradient(180deg,transparent,white);
+    animation:move2 2s linear infinite;
+    animation-delay:.5s;
+}
+@keyframes move2{
+    0%{top:-100%;}
+    50%,100%{top:100%;}
+}
+
+.online-booking .booking-btn span:nth-child(3){
+    bottom:0; right:-100%;
+    width:100%; height:3px;
+    background:linear-gradient(270deg,transparent,white);
+    animation:move3 2s linear infinite;
+    animation-delay:1s;
+}
+@keyframes move3{
+    0%{right:-100%;}
+    50%,100%{right:100%;}
+}
+
+.online-booking .booking-btn span:nth-child(4){
+    left:0; bottom:-100%;
+    width:3px; height:100%;
+    background:linear-gradient(360deg,transparent,white);
+    animation:move4 2s linear infinite;
+    animation-delay:1.5s;
+}
+@keyframes move4{
+    0%{bottom:-100%;}
+    50%,100%{bottom:100%;}
+}
+
+/* ===== Fade Up Animation ===== */
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
