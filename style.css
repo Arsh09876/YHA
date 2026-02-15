@@ -78,12 +78,7 @@ h1 {
     font-weight: 900;
     margin-bottom: 5px;
 }
-.h1 span{
-    font-size: 12px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 900;
-    margin-bottom: auto;
-}
+
 
 h2 {
     font-size: 10px;
@@ -311,7 +306,7 @@ h8 {
 @media (min-width: 600px) {
     .logo { height: 60px; width: 60px; }
     .logo1 { height: 65px; width: 75px; }
-    h1 { font-size: 18px; }
+    h1 { font-size: 14px; }
     h2 { font-size: 14px; }
     .welcome-title { font-size: 50px; }
     .section-title { font-size: 25px; }
