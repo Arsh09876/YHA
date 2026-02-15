@@ -20,7 +20,7 @@ body {
     left: 0;
     width: 100vw;
     height: 250vh;
-    background: url('bg2.jpeg') no-repeat center center;
+    background: url('hostel1.jpeg') no-repeat center center;
     background-size: cover;
     filter: blur(3.5px);
     animation: bgAnimation 20s linear infinite;
