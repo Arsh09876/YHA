@@ -1,19 +1,12 @@
+// Simple hover animation using JS
+        const cards = document.querySelectorAll('.contact-card');
 
-document.addEventListener("DOMContentLoaded", () => {
-    const rulesSection = document.querySelector(".rules-section");
-
-    const observer = new IntersectionObserver(
-        entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("show");
-                }
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'scale(1.05)';
             });
-        },
-        { threshold: 0.3 }
-    );
-
-    if (rulesSection) {
-        observer.observe(rulesSection);
-    }
-});
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'scale(1)';
+            });
+        });
+        
