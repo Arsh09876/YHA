@@ -73,18 +73,17 @@ body {
 }
 
 h1 {
-    font-size: 12px;
+    font-size: 14px; /* slightly bigger for Hindi */
     font-family: 'Franklin Gothic Medium', Arial, sans-serif;
-    font-weight: bold;
-    margin-bottom: 5px;
+    font-weight: 900;
+    margin: 2px 0;
 }
 
-
 h2 {
-    font-size: 8.5px;
-    font-weight: bold;
+    font-size: 12px;
     font-family: 'Franklin Gothic Medium', Arial, sans-serif;
-
+    font-weight: 900;
+    margin: 2px 0;
 }
 
 /* Welcome Title */
