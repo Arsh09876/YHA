@@ -307,7 +307,7 @@ h8 {
 @media (min-width: 600px) {
     .logo { height: 60px; width: 60px; }
     .logo1 { height: 65px; width: 75px; }
-    h1 { font-size: 12px; }
+    h1 { font-size: 22px; }
     h2 { font-size: 8.5px; }
     .welcome-title { font-size: 50px; }
     .section-title { font-size: 25px; }
