@@ -150,7 +150,7 @@ h2 {
     text-align: center;
     text-shadow: 2px 2px 2px black;
     color: white;
-    margin: 120px 0 15px;
+    margin: 30px 0 15px;
 }
 
 .fac {
@@ -441,7 +441,7 @@ h8 {
 /* ===== Online Booking Div Styling ===== */
 .online-booking{
     max-width:500px;
-    margin: -90px auto;
+    margin: 60px auto;
     padding:40px 30px;
     text-align:center;
     background: linear-gradient(135deg,#1e3c72,#2a5298,#4facfe,#00f2fe);
@@ -451,7 +451,7 @@ h8 {
     position: relative;
     overflow: hidden;
     animation:fadeUp 1s ease;
-    margin-top: -10px;
+    margin-top: 80px;
 }
 
 .online-booking h2{
@@ -619,228 +619,105 @@ h8 {
         transform: translateY(0);
     }
 }
+/* SECTION */
+.contact-section{
+    padding:40px 15px;
+}
 
+.section-title {
+font-size: 2.5rem;
+text-align: center;
+color: white;
+animation: slidedown 1s ease forwards;
+text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+margin-top: 20px;
 
+}
 
-    .section-title {
-        font-size: 2.5rem;
-        margin-bottom: 40px;
-        animation: slideDown 1s ease forwards;
-        color: #fff;
-        text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
-        margin-top: 30px;
+/* WRAPPER */
+.contact-wrapper{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:nowrap;
+}
 
-    }
+.contact-cards,
+.social-cards{
+    width:50%;
+}
 
-    .contact-cards {
-        display: flex;
-        flex-direction: column;
-        gap: 50px;
-        align-items: center;
-    
-        margin-top: -20px;
-    }
+/* CARD BASE */
+.contact-card,
+.social-card{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+    margin-bottom:20px;
+    border-radius:15px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(8px);
+    transition:0.4s;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0.1);
+}
 
-    /* Contact Card Styles */
-    .contact-card {
-        position: relative;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        padding: 5px 20px;
-        border-radius: 20px;
-        background: rgba(255,255,255,0.05);
-        cursor: pointer;
-        overflow: hidden;
-        transition: transform 0.3s ease;
-        z-index: 1;
-        
-    }
+/* ICON */
+.icon{
+    font-size:22px;
+}
 
-    .contact-card:hover {
-        transform: translateY(-10px);
-    }
+.social-card img{
+    width:24px;
+    height:24px;
+    border-radius: 20px;
+}
 
-    /* Glowing animated gradient border */
-    .contact-card::before {
-        content: "";
-        position: absolute;
-        top: -2px; left: -2px; right: -2px; bottom: -2px;
-        background: linear-gradient(270deg, #ff6ec4, #7873f5, #1fd1f9, #ff6ec4);
-        background-size: 600% 600%;
-        border-radius: 22px;
-        z-index: -2;
-        animation: gradientGlow 8s ease infinite;
-    }
+/* LINKS */
+.contact-link,
+.social-link{
+    text-decoration:none;
+    color:white;
+    font-size: 1.4rem;
+    text-shadow: 1px 1px 1px black;
+    transition:0.3s;
+}
 
-    .contact-card::after {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(0,0,0,0.3);
-        border-radius: 20px;
-        z-index: -1;
-    }
+.contact-link:hover,
+.social-link:hover{
+    color:#220235;
+}
 
-    .icon {
-        font-size: 2.2rem;
-        z-index: 2;
-    }
+/* 🔥 GLOW EFFECT */
+.contact-card::before,
+.social-card::before{
+    content:"";
+    position:absolute;
+    width:0;
+    height:0;
+    background:radial-gradient(circle, rgba(0,255,255,0.6) 0%, transparent 70%);
+    top:var(--y);
+    left:var(--x);
+    transform:translate(-50%,-50%);
+    transition:width 0.3s,height 0.3s;
+    pointer-events:none;
+}
 
-    .contact-link {
-        text-decoration: none;
-        color: #fff;
-        font-size: 1.3rem;
-        font-weight: 500;
-        transition: color 0.3s ease;
-        z-index: 2;
-    }
+/* On Hover */
+.contact-card:hover::before,
+.social-card:hover::before{
+    width:300px;
+    height:300px;
+}
 
-    .contact-link:hover {
-        color: #ffdd57;
-    }
-
-    /* Animations */
-    @keyframes gradientGlow {
-        0% {background-position: 0% 50%;}
-        50% {background-position: 100% 50%;}
-        100% {background-position: 0% 50%;}
-    }
-
-    @keyframes slideDown {
-        0% {opacity: 0; transform: translateY(-30px);}
-        100% {opacity: 1; transform: translateY(0);}
-    }
-
-    @media (min-width: 700px) {
-        .contact-cards {
-            flex-direction: row;
-        }
-    }
-    .section {
-        position: relative;
-    
-        
-    }
-    .section-titles{
-        font-size: 2.5rem;
-        margin-bottom: 40px;
-        animation: slideDown 1s ease forwards;
-        color: #fff;
-        text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
-        margin-top: -50px;
-    }
-
-
-    .social-cards {
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-        align-items: center;
-        position: relative;
-        
-    }
-
-    /* Social Card Styles */
-    .social-card {
-        position: relative;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        padding: 5px 15px;
-        border-radius: 20px;
-        background: rgba(255,255,255,0.05);
-        cursor: pointer;
-        overflow: hidden;
-        transition: transform 0.3s ease;
-        z-index: 1;
-        margin-top: 30px;
-    }
-
-    .social-card:hover {
-        transform: translateY(-10px);
-    }
-
-    /* Glowing animated gradient border */
-    .social-card::before {
-        content: "";
-        position: absolute;
-        top: -2px; left: -2px; right: -2px; bottom: -2px;
-        background: linear-gradient(270deg, #ff6ec4, #7873f5, #1fd1f9, #ff6ec4);
-        background-size: 600% 600%;
-        border-radius: 22px;
-        z-index: -2;
-        animation: gradientGlow 8s ease infinite;
-    }
-
-    .social-card::after {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(0,0,0,0.3);
-        border-radius: 20px;
-        z-index: -1;
-    }
-
-    /* Neon mouse trail inside cards */
-    .trail {
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        background: rgba(255,255,255,0.5);
-        border-radius: 50%;
-        pointer-events: none;
-        filter: blur(10px);
-        mix-blend-mode: screen;
-        transition: transform 0.05s ease;
-        z-index: 2;
-    }
-
-    /* Logo/Icon styles */
-    .icon img {
-        width: 40px;
-        height: 40px;
-        z-index: 2;
-    background-color: white;
-    border-radius: 50px;
-    margin-top: 7px;
-
-    }
-
-    .social-link {
-        text-decoration: none;
-        color: #fff;
-        font-size: 1.3rem;
-        font-weight: 500;
-        transition: color 0.3s ease;
-        z-index: 2;
-    }
-
-    .social-link:hover {
-        color: #ffdd57;
-    }
-
-    /* Animations */
-    @keyframes gradientGlow {
-        0% {background-position: 0% 50%;}
-        50% {background-position: 100% 50%;}
-        100% {background-position: 0% 50%;}
-    }
-
-    @keyframes slideDown {
-        0% {opacity: 0; transform: translateY(-30px);}
-        100% {opacity: 1; transform: translateY(0);}
-    }
-
-    @media (min-width: 700px) {
-        .social-cards {
-            flex-direction: row;
-        }
-    }
-
-
-
-
-
-
-
+/* Outer Neon Border Glow */
+.contact-card:hover,
+.social-card:hover{
+    box-shadow:
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 40px #00ffff;
+    transform:translateY(-8px);
+}
