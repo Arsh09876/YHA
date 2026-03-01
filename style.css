@@ -621,7 +621,7 @@ h8 {
 }
 /* SECTION */
 .section-title {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
         margin-bottom: 40px;
         animation: slideDown 1s ease forwards;
         color: #fff;
@@ -633,9 +633,8 @@ h8 {
     .contact-cards {
         display: flex;
         flex-direction: column;
-        gap: 50px;
+        gap: 10px;
         align-items: center;
-    
         margin-top: -20px;
     }
 
@@ -733,7 +732,7 @@ h8 {
     .social-cards {
         display: flex;
         flex-direction: column;
-        gap: 25px;
+        gap: 15px;
         align-items: center;
         position: relative;
         
@@ -752,7 +751,7 @@ h8 {
         overflow: hidden;
         transition: transform 0.3s ease;
         z-index: 1;
-        margin-top: 30px;
+        margin-top: 5px;
     }
 
     .social-card:hover {
