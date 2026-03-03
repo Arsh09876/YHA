@@ -1,48 +1,155 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Merriweather:wght@400;700;900&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body{
+    margin:0;
+    padding:0;
+    background: white ;
+    font-family:Arial, sans-serif;
+}
+.main{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-top:60px;
 }
 
-body {
-    font-family: 'Merriweather', serif;
-    position: relative;
-    overflow-x: hidden;
-    min-height: 100vh;
+.box{
+    width:85%;
+    max-width:900px;
+    height:450px;
+    position:relative;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 20px 40px rgba(0,0,0,0.3);
+    border:3px solid #000;
+    margin-top: -25px;
 }
 
-/* Background Animation */
-.bg-animated {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 250vh;
-    background: url('hostel1.jpeg') no-repeat center center;
-    background-size: cover;
-    filter: blur(3.5px);
-    animation: bgAnimation 20s linear infinite;
-    z-index: -1;
+/* ===== SLIDES ===== */
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    opacity:0;
+    animation:fade 9s infinite;
 }
 
-@keyframes bgAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
-/* Container */
-.container {
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 15px;
-    position: relative;
-    z-index: 1;
+/* Different delay for each image */
+.slide:nth-child(1){ animation-delay:0s; }
+.slide:nth-child(2){ animation-delay:3s; }
+.slide:nth-child(3){ animation-delay:6s; }
+
+/* Fade animation */
+@keyframes fade{
+    0%{opacity:0;}
+    10%{opacity:1;}
+    30%{opacity:1;}
+    40%{opacity:0;}
+    100%{opacity:0;}
 }
 
+/* Dark overlay */
+.box::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.3);
+    top:0;
+    left:0;
+}
+
+/* Center Text */
+.text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    text-align:center;
+    font-family:'Montserrat', sans-serif;
+    font-size:45px;
+    font-weight:900;
+   
+    color:#fff;
+
+    text-shadow:
+        0 4px 10px rgba(0,0,0,0.8),
+        0 8px 25px rgba(0,0,0,0.9);
+
+    animation: cinematic 2s ease-out forwards;
+    z-index:3;
+}
+.text p{
+        font-size: 14px;
+        margin-top: -4px;
+    }
+
+@keyframes cinematic{
+    0%{
+        opacity:0;
+        transform:translate(-50%, -50%) scale(1.2);
+    }
+    100%{
+        opacity:1;
+        transform:translate(-50%, -50%) scale(1);
+    }
+}
+/* ===== RESPONSIVE FOR TABLET ===== */
+@media (max-width: 992px){
+
+    .box{
+        width:95%;
+        height:350px;
+        margin-top: -15px;
+    }
+
+    .text{
+        font-size:35px;
+        letter-spacing:0;     /* removed spacing */
+        white-space:nowrap;   /* single line */
+    }
+    .text p{
+        font-size: 14px;
+        margin-top: -4px;
+    }
+    .main{
+        margin-top:40px;
+    }
+}
+
+
+/* ===== RESPONSIVE FOR MOBILE ===== */
+@media (max-width: 600px){
+
+    .box{
+        width:95%;
+        height:250px;
+        border-radius:15px;
+        margin-top: -10px;
+    }
+
+    .text{
+        font-size:22px;
+        letter-spacing:0;     /* removed spacing */
+        white-space:nowrap;   /* force single line */
+        overflow:hidden;      
+        text-overflow:ellipsis; /* agar bahut chhota screen hua */
+    }
+    .text p{
+        font-size: 9px;
+        margin-top: -4px;
+    }
+
+    .main{
+        margin-top:20px;
+    }
+}
 /* Header */
 .header {
     display: flex;
@@ -50,7 +157,7 @@ body {
     justify-content: center;
     gap: 10px;
     padding: 15px;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgb(173, 197, 241);
     border-bottom: 4px solid black;
 }
 
@@ -86,25 +193,15 @@ h2 {
     margin: 2px 0;
 }
 
-/* Welcome Title */
-.welcome-title {
-    text-align: center;
-    font-family: 'Roboto Slab', serif;
-    font-size: 35px;
-    font-weight: 700;
-    color: black;
-    margin: 20px 0;
-    text-shadow: 4px 3px 5px rgb(98, 245, 98);
-}
 
 /* Section History */
 .section-history {
-    margin-left: 15px;
+    margin-left: 50px;
     font-family: 'Roboto Slab', serif;
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 800;
-    text-shadow: 2px 2px 2px black;
-    color: white;
+    text-shadow: 2px 2px 2px white;
+    color: rgb(5, 5, 5);
     margin-bottom: 10px;
 }
 
@@ -138,47 +235,69 @@ h2 {
     text-align: justify;
     font-weight: bold;
     word-spacing: 2px;
-    color: white;
-    text-shadow: 1px 2px 1px black;
+    color: rgb(7, 7, 7);
+    text-shadow: 1px 2px 1px white;
     line-height: 1.8;
 }
 
 /* Facilities */
-.facilities-title {
+.facility-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap: 15px 40px;
+    margin-left: 290px;
+}
+
+.facility-grid div{
+    background: white;
+    padding:6px 7px;
+    border-radius:10px;
+    border-left:4px solid #0b3d91;
+    font-size:17px;
+    font-weight: bold;
+    transition:0.3s;
+}
+.fac{
     font-size: 28px;
     font-weight: 800;
     text-align: center;
-    text-shadow: 2px 2px 2px black;
-    color: white;
+    text-shadow: 2px 2px 2px white;
+    color: black;
+    font-family: 'Roboto Slab', serif;
     margin: -15px 0 15px;
 }
 
-.fac {
-    font-family: 'Lucida Sans', Verdana, sans-serif;
-    font-size: 14px;
-    line-height: 2.2;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px 30px;
-    font-weight: 900;
-    text-shadow: 2px 1px 1px black;
-    list-style: disc;
-    padding: 0 20px;
-    margin-bottom: 25px;
+.facility-grid div:hover{
+    border-left:4px solid #ff9933;
+    background:#fff;
 }
 
-.fac li {
-    color: white;
-}
+/* RESPONSIVE - Maintain 2 Columns Even on Mobile */
 
+@media(max-width:768px){
+    .facility-grid{
+        grid-template-columns:1fr 1fr;  /* Keep 2 columns */
+        gap:15px 20px;
+        margin-left: 25px;
+    }
+    .fac{
+        font-size: 24px;
+        margin: -15px 0 15px;
+    }
+
+    .facility-grid div{
+        font-size:15px;
+         padding:6px 4px;
+    }
+}
 /* Rooms Section */
 .rooms-title {
     font-size: 28px;
     font-weight: 800;
     text-align: center;
-    text-shadow: 2px 2px 2px black;
-    color: white;
+    text-shadow: 2px 2px 2px white;
+    color: rgb(12, 0, 0);
+    font-family: 'Roboto Slab', serif;
     margin-bottom: 25px;
 }
 
@@ -301,43 +420,67 @@ h8 {
         transform: translateY(0);
     }
 }
+/* ============== MOBILE (Default - 0px to 599px) ============== */
+.logo { height: 50px; width: 50px; }
+.logo1 { height: 55px; width: 65px; }
 
-/* ============== RESPONSIVE - TABLET ============== */
+h1 { font-size: 10px; }
+h2 { font-size: 8.5px; }
+
+.welcome-title { font-size: 32px; }
+.section-title { font-size: 18px; }
+.history-para { font-size: 14px; }
+.rooms-title { font-size: 20px; }
+.room-container {
+    display: grid;
+    grid-template-columns: 1fr;   /* 1 column for mobile */
+}
+
+.room-card p { font-size: 14px; }
+
+
+/* ============== TABLET (600px to 991px) ============== */
 @media (min-width: 600px) {
+
     .logo { height: 60px; width: 60px; }
     .logo1 { height: 65px; width: 75px; }
-    h1 { font-size: 22px; }
-    h2 { font-size: 8.5px; }
+
+    h1 { font-size: 18px; }
+    h2 { font-size: 16px; }
+
     .welcome-title { font-size: 50px; }
     .section-title { font-size: 25px; }
     .history-para { font-size: 15px; }
-    .facilities-title { font-size: 32px; }
-    .fac { font-size: 16px; }
+
     .rooms-title { font-size: 32px; }
-    .room-container { grid-template-columns: repeat(2, 1fr); }
-    h7 { font-size: 26px; }
+
+    .room-container {
+        grid-template-columns: repeat(2, 1fr);  /* 2 columns for tablet */
+    }
+
     .room-card p { font-size: 16px; }
 }
+
 
 /* ============== RESPONSIVE - DESKTOP ============== */
 @media (min-width: 992px) {
     .header { gap: 20px; padding: 20px; }
-    .logo { height: 70px; width: 70px; }
-    .logo1 { height: 75px; width: 85px; }
+    .logo { height: 80px; width: 80px; }
+    .logo1 { height: 85px; width: 95px; }
     h1 { font-size: 16px; }
     h2 { font-size: 15px; }
     .welcome-title { font-size: 67px; }
     .section-title { font-size: 28px; margin-left: 25px; }
     .history-box { padding: 30px; margin: 0 25px 30px; }
     .history-para { font-size: 16px; }
-    .facilities-title { font-size: 35px; }
-    .fac { font-size: 18px; gap: 10px 45px; }
+
     .rooms-title { font-size: 35px; }
     .room-container { grid-template-columns: repeat(3, 1fr); gap: 25px; padding: 0 25px 50px; }
     h7 { font-size: 28px; }
     .room-card p { font-size: 17px; }
     .price-box p { font-size: 17px; }
 }
+
 
 /* Container & Fonts */
 .explore-agra-section {
@@ -350,11 +493,12 @@ h8 {
 /* Heading Animation */
 .explore-agra-section h5 {
   font-size: 36px;
-  color: white;
-  text-shadow: 2px 2px 2px black;
+  color: black;
+  text-shadow: 2px 2px 2px white;
   margin-bottom: 15px;
   margin-top: -55px;
   opacity: 0;
+  font-family: 'Roboto Slab', serif;
   transform: translateY(-30px);
   animation: fadeSlideIn 1s forwards;
 }
@@ -371,8 +515,8 @@ h8 {
 /* Individual Item */
 .explore-item {
   background: white;
-  margin: 12px 0;
-  padding: 15px 20px;
+  margin: 10px 0;
+  padding: 10px 20px;
   border-radius: 8px;
   border-left: 6px solid #4b0082;
   opacity: 0;
@@ -437,6 +581,37 @@ h8 {
 
 @keyframes fadeSlideIn {
   to { opacity: 1; transform: translateY(0); }
+}
+/* ============================= */
+/* 📱 Mobile Responsive Design */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .explore-agra-section {
+    padding: 30px 15px;
+  }
+
+  .explore-agra-section h5 {
+    font-size: 22px;
+    margin-top: -25px;
+  }
+
+  .explore-items {
+    max-width: 100%;
+    padding: 0 5px;
+  }
+
+  .explore-item {
+    margin: 5px 0;
+    padding: 5px 15px;
+    border-left: 4px solid #4b0082;
+  }
+
+  .explore-item a {
+    font-size: 16px;
+  }
+
 }
 /* ===== Online Booking Div Styling ===== */
 .online-booking{
@@ -558,12 +733,15 @@ h8 {
 
 .rules-section h5 {
     margin-bottom: 10px;
+    margin-top: -10px;
     text-align: center;
     font-size:35px;
     color: #0d6efd;
     font-weight: 800;
     text-shadow: 2px 3px 1px rgba(0,0,0,0.2);
     text-transform: uppercase;
+      font-family: 'Roboto Slab', serif;
+
 }
 
 /* Scrollable box */
@@ -581,7 +759,7 @@ h8 {
     padding-left: 30px;
     margin-bottom: 10px;
     font-size: 18px;
-    color: #212529;
+    color: #0d0d0e;
     line-height: 1.6;
 }
 
@@ -617,6 +795,67 @@ h8 {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+/* ===============================
+   TABLET RESPONSIVE (992px se niche)
+================================= */
+@media (max-width: 992px) {
+
+    .rules-section {
+        max-width: 95%;
+        padding: 20px;
+        margin: 10px auto;
+    }
+
+    .rules-section h5 {
+        font-size: 28px;
+        margin-top: 0;
+    }
+
+    .rules li {
+        font-size: 16px;
+        padding-left: 26px;
+    }
+
+    .rules {
+        max-height: 220px;
+    }
+}
+
+
+/* ===============================
+   MOBILE RESPONSIVE (600px se niche)
+================================= */
+@media (max-width: 600px) {
+
+    .rules-section {
+        max-width: 86%;
+        padding: 18px 15px;
+        border-left: 4px solid #0d6efd;
+        margin: 15px auto;
+    }
+
+    .rules-section h5 {
+        font-size: 25px;
+        text-shadow: none;   /* Mobile pe clean look */
+        letter-spacing: 1px;
+
+    }
+
+    .rules {
+        max-height: 200px;
+    }
+
+    .rules li {
+        font-size: 15px;
+        padding-left: 24px;
+        line-height: 1.5;
+    }
+
+    .rules li::before {
+        font-size: 14px;
+        top: 3px;
     }
 }
 /* SECTION */

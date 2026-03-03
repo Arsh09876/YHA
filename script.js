@@ -9,4 +9,4 @@
                 card.style.transform = 'scale(1)';
             });
         });
-        
+
