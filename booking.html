@@ -3,221 +3,200 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hostel Booking Form</title>
+<title>Booking Form</title>
 
 <style>
+
 body{
-    font-family: Arial, sans-serif;
-    min-height:100vh;
-    margin:0;
-    padding:20px;
-    background:  #20334d;
-    background-size:600% 600%;
-    animation: gradientMove 12s ease infinite;
+font-family: Arial, Helvetica, sans-serif;
+background:#f2f5f9;
+margin:0;
+padding:0;
 }
-@keyframes gradientMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+
+.container{
+max-width:700px;
+margin:40px auto;
+background:white;
+padding:30px;
+border-radius:8px;
+box-shadow:0 0 15px rgba(0,0,0,0.15);
 }
-.form-box{
-    max-width:520px;
-    margin:auto;
-    background:rgba(255,255,255,0.96);
-    padding:22px;
-    border-radius:16px;
-    box-shadow:0 20px 40px rgb(57, 57, 68);
-    animation: fadeUp .8s ease;
-}
-@keyframes fadeUp{
-    from{opacity:0; transform:translateY(30px);}
-    to{opacity:1; transform:translateY(0);}
-}
+
 h2{
-    text-align:center;
-    color:#000709;
-    text-shadow: 2px 2px 2px #35718b;
-    margin-bottom:15px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 45px;
-    margin-top: -10px;
-}
-label{
-    font-weight:600;
-    margin-top:12px;
-    display:block;
-    font-size: 20px;
-    text-shadow: 2px 2px 2px white;
-    font-weight: 800;
-;
+text-align:center;
+margin-top: -20px;
+font-size: 40px;
+color:blue;
+font-weight: 900;
+font-family: 'Roboto Slab', serif;
 
 }
-input,select,textarea{
-    width:100%;
-    padding:10px;
-    margin-top:6px;
-    border-radius: 20px;
-    border:1px solid #ccc;
-    font-size:14px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    font-weight: 600;
+
+label{
+font-weight:bolder;
+display:block;
+margin-top:10px;
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+
 }
+
+input, select{
+width:100%;
+padding:10px;
+margin-top:6px;
+border-radius:5px;
+font-weight: bold;
+font-family: 'Times New Roman', Times, serif;
+border:1px solid #ccc;
+font-size:15px;
+}
+
 button{
-    width:100%;
-    margin-top:22px;
-    padding:15px;
-    background:#25D366;
-    border:none;
-    font-size: 25px;
-    font-weight: 600;
-    text-shadow: 2px 2px 2px black;
-    color:white;
-    border-radius:25px;
-    cursor:pointer;
+width:100%;
+margin-top:25px;
+padding:12px;
+background:#0b3d91;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
 }
+
 button:hover{
-    background:#1ebe5d;
+background:#072c6b;
 }
-.note{
-    font-size:12px;
-    color:#555;
-    text-align:center;
-    margin-top:10px;
+
+/* Tablet Responsive */
+@media (max-width:768px){
+
+.container{
+width:90%;
+margin:20px auto;
+padding:20px;
 }
+
+h2{
+font-size:22px;
+
+}
+
+button{
+font-size:15px;
+}
+
+}
+
+/* Mobile Responsive */
+@media (max-width:480px){
+
+.container{
+width:95%;
+padding:5px;
+margin-top: 8px;
+}
+
+h2{
+font-size:25px;
+font-weight: 800;
+margin: 5px;
+}
+
+label{
+font-size:14px;
+}
+
+input,select{
+font-size: 14px;
+padding:9px;
+width: 94%;
+}
+
+button{
+font-size:14px;
+padding:11px;
+}
+
+
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="form-box">
-<h2>Hostel Booking Form</h2>
+<div class="container">
+
+<h2>Booking Form</h2>
+
+<form id="bookingForm">
 
 <label>Name</label>
-<input type="text" id="userName" placeholder="Enter full name">
+<input type="text" id="name" required>
 
-<label>No. of Persons</label>
-<input type="number" id="person" min="1">
+<label>Number of Persons</label>
+<input type="number" id="persons" required>
 
 <label>Check-In Date</label>
-<input type="date" id="checkin">
+<input type="date" id="checkin" required>
 
 <label>Check-Out Date</label>
-<input type="date" id="checkout">
+<input type="date" id="checkout" required>
 
-<!-- ✅ CATEGORY ADDED HERE -->
 <label>Category</label>
-<select id="category">
-    <option value="">Select Category</option>
-    <option>Delux Room</option>
-    <option>AC Room</option>
-    <option>Non-AC Room</option>
-    <option>Dormitory</option>
-    <option>Mini Lounge</option>
-    <option>Conference Hall</option>
+<select id="category" required>
+<option value="">Select Category</option>
+<option>Delux Room</option>
+<option>Conference Hall</option>
+<option>AC Room</option>
+<option>Non AC Room</option>
+<option>Dormitory</option>
+<option>Mini Lounge (Lobby)</option>
 </select>
 
-<label>Contact Number</label>
-<input type="tel" id="contact" placeholder="10 digit mobile number">
-
-<label>Email ID</label>
-<input type="email" id="email">
-
-<label>State</label>
-<select id="state" onchange="loadCities()">
-<option value="">Select State</option>
-</select>
-
-<label>City</label>
-<select id="city">
-<option value="">Select City</option>
-</select>
 
 <label>Payment Mode</label>
-<select>
+<select id="payment">
 <option>Online Only</option>
 </select>
 
-<button onclick="sendWhatsApp()">Submit & Book on WhatsApp</button>
+<button type="submit">Submit Booking</button>
 
+</form>
 
 </div>
 
 <script>
-const stateCity={
-"Andhra Pradesh":["Visakhapatnam","Vijayawada","Guntur","Nellore","Kurnool","Tirupati","Rajahmundry","Kakinada","Kadapa","Anantapur"],
-"Arunachal Pradesh":["Itanagar","Naharlagun","Pasighat","Tawang","Ziro","Bomdila","Aalo"],
-"Assam":["Guwahati","Dibrugarh","Jorhat","Silchar","Tezpur","Nagaon","Tinsukia","Karimganj"],
-"Bihar":["Patna","Gaya","Bhagalpur","Muzaffarpur","Darbhanga","Purnia","Ara","Begusarai","Katihar"],
-"Chhattisgarh":["Raipur","Bilaspur","Durg","Bhilai","Korba","Raigarh","Jagdalpur","Ambikapur"],
-"Goa":["Panaji","Margao","Vasco da Gama","Mapusa","Ponda"],
-"Gujarat":["Ahmedabad","Surat","Vadodara","Rajkot","Bhavnagar","Jamnagar","Junagadh","Gandhinagar","Anand"],
-"Haryana":["Gurugram","Faridabad","Panipat","Sonipat","Karnal","Hisar","Rohtak","Ambala","Yamunanagar"],
-"Himachal Pradesh":["Shimla","Manali","Dharamshala","Kangra","Solan","Mandi","Hamirpur","Una"],
-"Jharkhand":["Ranchi","Jamshedpur","Dhanbad","Bokaro","Hazaribagh","Giridih","Deoghar"],
-"Karnataka":["Bengaluru","Mysuru","Mangaluru","Hubballi","Dharwad","Belagavi","Ballari","Tumakuru","Shivamogga"],
-"Kerala":["Thiruvananthapuram","Kochi","Kozhikode","Thrissur","Kollam","Alappuzha","Palakkad","Kannur"],
-"Madhya Pradesh":["Bhopal","Indore","Gwalior","Jabalpur","Ujjain","Sagar","Rewa","Satna","Chhindwara"],
-"Maharashtra":["Mumbai","Pune","Nagpur","Nashik","Thane","Aurangabad","Solapur","Kolhapur","Amravati","Jalgaon"],
-"Odisha":["Bhubaneswar","Cuttack","Rourkela","Sambalpur","Puri","Berhampur","Balasore"],
-"Punjab":["Ludhiana","Amritsar","Jalandhar","Patiala","Bathinda","Mohali","Hoshiarpur"],
-"Rajasthan":["Jaipur","Jodhpur","Udaipur","Kota","Ajmer","Bikaner","Alwar","Bharatpur","Sikar"],
-"Tamil Nadu":["Chennai","Coimbatore","Madurai","Tiruchirappalli","Salem","Erode","Vellore","Thanjavur","Tirunelveli"],
-"Telangana":["Hyderabad","Warangal","Karimnagar","Nizamabad","Khammam","Mahabubnagar"],
-"Uttar Pradesh":["Lucknow","Kanpur","Agra","Varanasi","Prayagraj","Noida","Ghaziabad","Meerut","Bareilly","Aligarh","Jhansi","Gorakhpur"],
-"Uttarakhand":["Dehradun","Haridwar","Rishikesh","Nainital","Haldwani","Roorkee","Almora"],
-"West Bengal":["Kolkata","Howrah","Durgapur","Asansol","Siliguri","Malda","Kharagpur","Haldia"]
-};
 
-const stateSelect=document.getElementById("state");
-for(let s in stateCity){
- let o=document.createElement("option");
- o.value=s; o.textContent=s;
- stateSelect.appendChild(o);
-}
+document.getElementById("bookingForm").addEventListener("submit", function(e){
 
-function loadCities(){
- const city=document.getElementById("city");
- city.innerHTML="<option value=''>Select City</option>";
- stateCity[stateSelect.value].forEach(c=>{
-   let o=document.createElement("option");
-   o.value=c; o.textContent=c;
-   city.appendChild(o);
- });
-}
+e.preventDefault();
 
-function sendWhatsApp(){
- const name=document.getElementById("userName").value.trim();
- const person=document.getElementById("person").value;
- const checkin=document.getElementById("checkin").value;
- const checkout=document.getElementById("checkout").value;
- const category=document.getElementById("category").value;
- const contact=document.getElementById("contact").value;
- const state=document.getElementById("state").value;
- const city=document.getElementById("city").value;
+var name=document.getElementById("name").value;
+var persons=document.getElementById("persons").value;
+var checkin=document.getElementById("checkin").value;
+var checkout=document.getElementById("checkout").value;
+var category=document.getElementById("category").value;
+var payment=document.getElementById("payment").value;
 
- if(!name||!person||!checkin||!checkout||!category||!contact||!state||!city){
-   alert("⚠️ Please fill all required fields before submitting.");
-   return;
- }
+var message =
+"New Booking Request%0A%0A"+
+"Name: "+name+"%0A"+
+"No. of Persons: "+persons+"%0A"+
+"Check-In Date: "+checkin+"%0A"+
+"Check-Out Date: "+checkout+"%0A"+
+"Category: "+category+"%0A"+
+"Payment Mode: "+payment;
 
- let msg=
-` Hostel Booking Request
-👤 Name: ${name}
-👥 Persons: ${person}
-📅 Check-In: ${checkin}
-📅 Check-Out: ${checkout}
-🏷 Category: ${category}
-📞 Contact: ${contact}
-📍 State: ${state}
-🏙 City: ${city}
-💳 Payment Mode: Online Only`;
+var phone="918171284536";
 
- window.open(
-   "https://wa.me/918171284536?text="+encodeURIComponent(msg),
-   "_blank"
- );
-}
+var url="https://wa.me/"+phone+"?text="+message;
+
+window.open(url,"_blank");
+
+});
+
 </script>
 
 </body>

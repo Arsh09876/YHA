@@ -1,11 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Merriweather:wght@400;700;900&display=swap');
 
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     margin:0;
     padding:0;
     background: white ;
     font-family:Arial, sans-serif;
+    line-height: 1.6;
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol {
+    list-style: none;
+}
+/* MAIN */
 .main{
     width:100%;
     display:flex;
@@ -14,9 +42,9 @@ body{
 }
 
 .box{
-    width:85%;
-    max-width:900px;
-    height:450px;
+    width: 95%;
+    max-width:2000px;
+    height:550px;
     position:relative;
     border-radius:20px;
     overflow:hidden;
@@ -70,10 +98,11 @@ body{
     position:absolute;
     top:50%;
     left:50%;
+    margin-top: 50px;
     transform:translate(-50%, -50%);
-    text-align:center;
+    text-align:center;  
     font-family:'Montserrat', sans-serif;
-    font-size:45px;
+    font-size:60px;
     font-weight:900;
    
     color:#fff;
@@ -86,9 +115,10 @@ body{
     z-index:3;
 }
 .text p{
-        font-size: 14px;
+        font-size: 16.5px;
         margin-top: -4px;
     }
+ 
 
 @keyframes cinematic{
     0%{
@@ -100,56 +130,117 @@ body{
         transform:translate(-50%, -50%) scale(1);
     }
 }
-/* ===== RESPONSIVE FOR TABLET ===== */
-@media (max-width: 992px){
 
-    .box{
-        width:95%;
-        height:350px;
-        margin-top: -15px;
-    }
+/* BUTTON */
 
-    .text{
-        font-size:35px;
-        letter-spacing:0;     /* removed spacing */
-        white-space:nowrap;   /* single line */
-    }
-    .text p{
-        font-size: 14px;
-        margin-top: -4px;
-    }
-    .main{
-        margin-top:40px;
-    }
+.booking-btn{
+
+display:inline-block;
+margin-top:25px;
+padding:12px 30px;
+font-size:25px;
+color:white;
+text-decoration:none;
+border-radius:40px;
+
+background:rgb(48, 48, 236);
+
+backdrop-filter:blur(10px);
+
+border:1px solid rgba(255,255,255,0.3);
+
+transition:0.4s;
+
+}
+
+/* BUTTON HOVER */
+
+.booking-btn:hover{
+
+background:white;
+color:black;
+transform:scale(1.1);
+
+}
+
+/* TEXT ANIMATION */
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translate(-50%,-20%);
+}
+
+to{
+opacity:1;
+transform:translate(-50%,-50%);
+}
+
+}
+/* ======================
+TABLET RESPONSIVE
+====================== */
+
+@media (max-width: 900px){
+
+.box{
+    width:92%;
+    height:380px;
+}
+
+.text{
+    font-size:32px;
+}
+
+.text p{
+    font-size:13px;
+}
+
+.booking-btn{
+    font-size:16px;
+    padding:10px 24px;
+}
+
 }
 
 
-/* ===== RESPONSIVE FOR MOBILE ===== */
+/* ======================
+MOBILE RESPONSIVE
+====================== */
+
 @media (max-width: 600px){
 
-    .box{
-        width:95%;
-        height:250px;
-        border-radius:15px;
-        margin-top: -10px;
-    }
-
-    .text{
-        font-size:22px;
-        letter-spacing:0;     /* removed spacing */
-        white-space:nowrap;   /* force single line */
-        overflow:hidden;      
-        text-overflow:ellipsis; /* agar bahut chhota screen hua */
-    }
-    .text p{
-        font-size: 9px;
-        margin-top: -4px;
-    }
-
-    .main{
-        margin-top:20px;
-    }
+.main{
+    margin-top:10px;
 }
+
+.box{
+    width:95%;
+    height:260px;
+    border-radius:12px;
+    margin-top:0;
+}
+
+.text{
+    font-size:22px;
+    width:90%;
+    margin-top: 40px;
+}
+
+.text p{
+    font-size:8px;
+    margin-top:3px;
+}
+
+.booking-btn{
+    font-size:14px;
+    padding:8px 18px;
+    margin-top:15px;
+}
+
+}
+
 /* Header */
 .header {
     display: flex;
@@ -203,6 +294,7 @@ h2 {
     text-shadow: 2px 2px 2px white;
     color: rgb(5, 5, 5);
     margin-bottom: 10px;
+    display: block;
 }
 
 /* History Box */
@@ -282,7 +374,7 @@ h2 {
     }
     .fac{
         font-size: 24px;
-        margin: -15px 0 15px;
+        margin: 10px 0 15px;
     }
 
     .facility-grid div{
@@ -333,16 +425,17 @@ h2 {
     text-align: center;
 }
 
-h7 {
+h3 {
     display: block;
-    font-size: 22px;
+    font-size: 25px;
     color: #010811;
     font-weight: 800;
-    font-family: 'Times New Roman', serif;
+    text-shadow: 2px 2px 2px white;
+    font-family: 'Roboto Slab', serif;
     margin-bottom: 8px;
 }
 
-h8 {
+.name{
     display: block;
     font-size: 18px;
     color: black;
@@ -413,7 +506,7 @@ h8 {
 @keyframes fadeUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -430,7 +523,8 @@ h2 { font-size: 8.5px; }
 .welcome-title { font-size: 32px; }
 .section-title { font-size: 18px; }
 .history-para { font-size: 14px; }
-.rooms-title { font-size: 20px; }
+.rooms-title { font-size: 20px;
+margin-top: 10px; }
 .room-container {
     display: grid;
     grid-template-columns: 1fr;   /* 1 column for mobile */
@@ -491,7 +585,7 @@ h2 { font-size: 8.5px; }
 }
 
 /* Heading Animation */
-.explore-agra-section h5 {
+.explore-agra-section h4 {
   font-size: 36px;
   color: black;
   text-shadow: 2px 2px 2px white;
@@ -592,7 +686,7 @@ h2 { font-size: 8.5px; }
     padding: 30px 15px;
   }
 
-  .explore-agra-section h5 {
+  .explore-agra-section h4 {
     font-size: 22px;
     margin-top: -25px;
   }
@@ -613,113 +707,6 @@ h2 { font-size: 8.5px; }
   }
 
 }
-/* ===== Online Booking Div Styling ===== */
-.online-booking{
-    max-width:500px;
-    margin: 60px auto;
-    padding:40px 30px;
-    text-align:center;
-    background: linear-gradient(135deg,#1e3c72,#2a5298,#4facfe,#00f2fe);
-    border-radius: 15px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.3);
-    color:white;
-    position: relative;
-    overflow: hidden;
-    animation:fadeUp 1s ease;
-    margin-top: 30px;
-}
-
-.online-booking h2{
-    font-size: 36px;
-    margin-bottom:15px;
-    text-shadow:2px 2px 3px rgba(0,0,0,0.4);
-}
-
-.online-booking p{
-    font-size:18px;
-    margin-bottom:30px;
-    opacity:0.9;
-}
-
-/* ===== Button ===== */
-.online-booking .booking-btn{
-    position:relative;
-    display:inline-block;
-    padding:18px 40px;
-    font-size:22px;
-    color:white;
-    text-decoration:none;
-    border-radius: 50px;
-    background:#25D366;
-    overflow:hidden;
-    box-shadow:0 0 20px rgba(37,211,102,0.6);
-    transition:transform 0.3s;
-    
-}
-
-.online-booking .booking-btn:hover{
-    transform:scale(1.1);
-}
-
-/* glowing border animation */
-.online-booking .booking-btn span{
-    position:absolute;
-    display:block;
-}
-
-.online-booking .booking-btn span:nth-child(1){
-    top:0; left:-100%;
-    width:100%; height:3px;
-    background:linear-gradient(90deg,transparent,white);
-    animation:move1 2s linear infinite;
-}
-@keyframes move1{
-    0%{left:-100%;}
-    50%,100%{left:100%;}
-}
-
-.online-booking .booking-btn span:nth-child(2){
-    right:0; top:-100%;
-    width:3px; height:100%;
-    background:linear-gradient(180deg,transparent,white);
-    animation:move2 2s linear infinite;
-    animation-delay:.5s;
-}
-@keyframes move2{
-    0%{top:-100%;}
-    50%,100%{top:100%;}
-}
-
-.online-booking .booking-btn span:nth-child(3){
-    bottom:0; right:-100%;
-    width:100%; height:3px;
-    background:linear-gradient(270deg,transparent,white);
-    animation:move3 2s linear infinite;
-    animation-delay:1s;
-}
-@keyframes move3{
-    0%{right:-100%;}
-    50%,100%{right:100%;}
-}
-
-.online-booking .booking-btn span:nth-child(4){
-    left:0; bottom:-100%;
-    width:3px; height:100%;
-    background:linear-gradient(360deg,transparent,white);
-    animation:move4 2s linear infinite;
-    animation-delay:1.5s;
-}
-@keyframes move4{
-    0%{bottom:-100%;}
-    50%,100%{bottom:100%;}
-}
-
-/* ===== Fade Up Animation ===== */
-@keyframes fadeUp{
-    from{opacity:0; transform:translateY(30px);}
-    to{opacity:1; transform:translateY(0);}
-}
-
 .rules-section {
     max-width: 850px;
     margin: -10px auto;
@@ -731,7 +718,7 @@ h2 { font-size: 8.5px; }
     animation: fadeUp 0.8s ease forwards;
 }
 
-.rules-section h5 {
+.rules-section h4 {
     margin-bottom: 10px;
     margin-top: -10px;
     text-align: center;
@@ -808,7 +795,7 @@ h2 { font-size: 8.5px; }
         margin: 10px auto;
     }
 
-    .rules-section h5 {
+    .rules-section h4 {
         font-size: 28px;
         margin-top: 0;
     }
@@ -836,7 +823,7 @@ h2 { font-size: 8.5px; }
         margin: 15px auto;
     }
 
-    .rules-section h5 {
+    .rules-section h4 {
         font-size: 25px;
         text-shadow: none;   /* Mobile pe clean look */
         letter-spacing: 1px;
